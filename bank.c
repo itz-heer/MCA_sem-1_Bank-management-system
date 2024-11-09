@@ -180,6 +180,7 @@ void save_account_to_file(const Account *account) {
     int found = 0;
 
     // Read each account and rewrite to temp file with updates
+    // 
     while (fscanf(file, "%s %s %s %lf\n", temp.username, temp.password, temp.account_number, &temp.balance) != EOF) {
         if (strcmp(temp.username, account->username) == 0) {
             fprintf(tempFile, "%s %s %s %.2f\n", account->username, account->password, account->account_number, account->balance);
